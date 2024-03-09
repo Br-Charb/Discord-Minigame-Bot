@@ -162,7 +162,7 @@ class HitButton(Button):
                 # Edit embed
                 bjEmbed = discord.Embed()
                 bjEmbed = bjEmbed.set_author(name=f"{name}'s Blackjack Game", icon_url=Author.avatar)
-                bjEmbed.add_field(name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` ` ? `\nTotal: `{dealer_card_sum}`", inline=False)
+                bjEmbed.add_field(name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` ` ? `\nTotal: `{dealer_card_sum}`", inline=False)
                 bjEmbed.add_field(name=f"{name} (Player)", value=f"Cards: `{PlayerCard1}` `{PlayerCard2}` `{PlayerCard3}`\nTotal: `{card_sum}`", inline=False)
                 bjCount += 1
                 # make a new button
@@ -175,7 +175,7 @@ class HitButton(Button):
                 PlayerCard4 = card()
                 bjEmbed = discord.Embed()
                 bjEmbed = bjEmbed.set_author(name=f"{name}'s Blackjack Game", icon_url=Author.avatar)
-                bjEmbed.add_field(name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` ` ? `\nTotal: `{dealer_card_sum}`", inline=False)
+                bjEmbed.add_field(name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` ` ? `\nTotal: `{dealer_card_sum}`", inline=False)
                 bjEmbed.add_field(name=f"{name} (Player)", value=f"Cards: `{PlayerCard1}` `{PlayerCard2}` `{PlayerCard3}` `{PlayerCard4}`\nTotal: `{card_sum}`", inline=False)
                 bjCount += 1
                 bjView = View()
@@ -187,7 +187,7 @@ class HitButton(Button):
                 PlayerCard5 = card()
                 bjEmbed = discord.Embed()
                 bjEmbed = bjEmbed.set_author(name=f"{name}'s Blackjack Game", icon_url=Author.avatar)
-                bjEmbed.add_field(name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` ` ? `\nTotal: `{dealer_card_sum}`", inline=False)
+                bjEmbed.add_field(name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` ` ? `\nTotal: `{dealer_card_sum}`", inline=False)
                 bjEmbed.add_field(name=f"{name} (Player)", value=f"Cards: `{PlayerCard1}` `{PlayerCard2}` `{PlayerCard3}` `{PlayerCard4}` `{PlayerCard5}`\nTotal: `{card_sum}`", inline=False)
                 bjCount += 1
                 if card_sum <= 22:
@@ -195,12 +195,12 @@ class HitButton(Button):
                     bjOutcome = "Won, you had five cards and went under 21"
                     bjEmbed.remove_field(0)
                     bjEmbed.insert_field_at(0, name=f"Result", value=f'{bjOutcome}')
-                    bjEmbed.insert_field_at(1, name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_card()}`\nTotal: `{dealer_card_sum}`", inline=False)
+                    bjEmbed.insert_field_at(1, name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_card()}`\nTotal: `{dealer_card_sum}`", inline=False)
             if card_sum >= 22:
                 bjOutcome = "Lost, you busted and went over 21."
                 bjEmbed.remove_field(0)
                 bjEmbed.insert_field_at(0, name=f"Result", value=f'{bjOutcome}')
-                bjEmbed.insert_field_at(1, name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_card()}`\nTotal: `{dealer_card_sum}`", inline=False)
+                bjEmbed.insert_field_at(1, name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_card()}`\nTotal: `{dealer_card_sum}`", inline=False)
                 bjView = View()
 
         if interaction.user == Author:
@@ -235,24 +235,24 @@ class StandButton(Button):
             if len(dealer_cards) == 1:
                 bjEmbed.remove_field(0)
                 bjEmbed.insert_field_at(0, name=f"Result", value=f'{bjOutcome}')
-                bjEmbed.insert_field_at(1, name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}`\nTotal: `{dealer_card_sum}`", inline=False)
+                bjEmbed.insert_field_at(1, name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}`\nTotal: `{dealer_card_sum}`", inline=False)
             elif len(dealer_cards) == 2:
                 bjEmbed.remove_field(0)
                 bjEmbed.insert_field_at(0, name=f"Result", value=f'{bjOutcome}')
-                bjEmbed.insert_field_at(1, name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}` `{dealer_cards[1]}`\nTotal: `{dealer_card_sum}`", inline=False)
+                bjEmbed.insert_field_at(1, name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}` `{dealer_cards[1]}`\nTotal: `{dealer_card_sum}`", inline=False)
             elif len(dealer_cards) == 3:
                 bjEmbed.remove_field(0)
                 bjEmbed.insert_field_at(0, name=f"Result", value=f'{bjOutcome}')
-                bjEmbed.insert_field_at(1, name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}` `{dealer_cards[1]}` `{dealer_cards[2]}`\nTotal: `{dealer_card_sum}`", inline=False)
+                bjEmbed.insert_field_at(1, name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}` `{dealer_cards[1]}` `{dealer_cards[2]}`\nTotal: `{dealer_card_sum}`", inline=False)
             elif len(dealer_cards) == 4 and dealer_card_sum <= 21:
                 bjOutcome = "Lost, dealer had five cards and went under 21"
                 bjEmbed.remove_field(0)
                 bjEmbed.insert_field_at(0, name=f"Result", value=f'{bjOutcome}')
-                bjEmbed.insert_field_at(1, name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}` `{dealer_cards[1]}` `{dealer_cards[2]}` `{dealer_cards[3]}`\nTotal: `{dealer_card_sum}`", inline=False)
+                bjEmbed.insert_field_at(1, name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}` `{dealer_cards[1]}` `{dealer_cards[2]}` `{dealer_cards[3]}`\nTotal: `{dealer_card_sum}`", inline=False)
             elif len(dealer_cards) == 4:
                 bjEmbed.remove_field(0)
                 bjEmbed.insert_field_at(0, name=f"Result", value=f'{bjOutcome}')
-                bjEmbed.insert_field_at(1, name=f"Namron's Worst Nightmare (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}` `{dealer_cards[1]}` `{dealer_cards[2]}` `{dealer_cards[3]}`\nTotal: `{dealer_card_sum}`", inline=False)
+                bjEmbed.insert_field_at(1, name=f"Casino (Dealer)", value=f"Cards: `{DealerCard1}` `{dealer_cards[0]}` `{dealer_cards[1]}` `{dealer_cards[2]}` `{dealer_cards[3]}`\nTotal: `{dealer_card_sum}`", inline=False)
         if interaction.user == Author:
             standCard()
             try:
