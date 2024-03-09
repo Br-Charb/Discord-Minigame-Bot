@@ -1,4 +1,7 @@
 ![Blackjack](https://github.com/Br-Charb/Discord-Minigame-Bot/blob/main/demo.png?raw=true)
+<br />
+
+![PYTHON](https://img.shields.io/badge/python-0000CC?style=for-the-badge&logo=Python&logoColor=white)
 
 # Discord Minigame Bot
 
