@@ -275,8 +275,8 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    # CLEAR COMMAND
-    elif user_message.lower().split(' ')[0] == "$clear" and (str(message.author) == "rocket#7610" or str(message.author) == "LosPapasGrandes#7863"):
+    # CLEAR COMMAND                                                               ↓↓↓↓↓ User Discord ID
+    elif user_message.lower().split(' ')[0] == "$clear" and (str(message.author) == ""):
         try:
             await message.channel.purge(limit=int(user_message.lower().split(' ')[1]))
             await message.channel.send(f"{user_message.lower().split(' ')[1]} messages cleared.")
